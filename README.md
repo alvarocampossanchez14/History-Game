@@ -14,4 +14,26 @@
 
 ### Clonar el repositorio
 
-Primero, clona el repositorio a tu máquina local
+Primero, clona el repositorio a tu máquina local:
+
+ ```bash
+      git clone https://github.com/alvarocampossanchez14/History-Game.git
+```
+
+Segundo, ves al directorio del proyecto:
+
+   ```bash
+      cd History-Game
+```
+
+Tercero, instala las dependencias:
+
+  ```bash
+      npm install
+  ```
+
+Último, levanta el servidor para ver el proyecto:
+
+  ```bash
+  git clone https://github.com/tuusuario/juego-de-preguntas-de-historia.git
+```
