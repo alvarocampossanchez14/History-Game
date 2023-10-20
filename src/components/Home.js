@@ -37,6 +37,7 @@ function Home() { // Agrega un estado para mostrar o ocultar el juego
 
 
 
+
       return (
         <div className="flex flex-col items-center min-h-screen">
           <div className="flex justify-center items-center h-screen">
@@ -44,7 +45,10 @@ function Home() { // Agrega un estado para mostrar o ocultar el juego
             <h1 className="text-4xl font-bold text-white text-center text-gray-800 animate-fade-in">
               Joc d'Història
             </h1>
-            <button className="bg-gray-700 text-white hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300 transition duration-300 ease-in-out transform hover:scale-105 hover:rotate-3 rounded-lg px-4 py-2 animate-fade-in" 
+            <button className="cursor-pointer transition-all bg-gray-700 text-white px-6 py-2 rounded-lg
+                              border-gray-600 transition duration-300 ease-in-out
+                              border-b-[4px] hover:brightness-110 hover:-translate-y-[1px] hover:border-b-[6px]
+                              active:border-b-[2px] active:brightness-90 active:translate-y-[2px]" 
               onClick={start}>
               Començar Partida
             </button>

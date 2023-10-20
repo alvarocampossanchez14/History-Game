@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart, faX } from '@fortawesome/free-solid-svg-icons';
+import { faHeart, faX, faSignOut } from '@fortawesome/free-solid-svg-icons';
 import background from './../img/fondo.jpg'
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "./../firebase";
@@ -156,6 +156,7 @@ function Game({setIsGameInProgress}) {
         } else if (tiempoRestante <= 0 && !partidaFinalizada) {
           mostrarPreguntaAleatoria(); 
           setPreguntaPista(false)
+          setVidas((prevVidas) => prevVidas - 1);
           setOutTime(true)
           setTiempoRestante(60) 
 
@@ -273,7 +274,7 @@ function Game({setIsGameInProgress}) {
 
         
 
-        <div className="bg-slate-700 text-white p-1 w-48 m-3 rounded-lg flex flex-col items-center">
+        <div className="bg-slate-700 text-white p-1 w-48 m-3 rounded-lg border-slate-600 border-b-[4px] flex flex-col items-center">
           <p className="font-bold text-2xl mb-2">Puntos: {puntos}</p>
         </div>
 
@@ -293,9 +294,12 @@ function Game({setIsGameInProgress}) {
           </div>
         </div>
 
-        <button onClick={closeGame} className='absolute z-20 hidden sm:flex top-6 right-20 bg-blue-700 text-white px-4 py-2 mt-2 rounded hover:bg-red-700'>
-            Abandonar
-          </button>
+
+
+          <button class="Btn" onClick={closeGame} className='absolute z-20 hidden sm:flex top-6 right-20 bg-blue-700 text-white px-4 py-2 mt-2 rounded-lg border-blue-600 border-b-[4px] hover:bg-red-700 hover:border-red-600'>
+            <FontAwesomeIcon icon={faSignOut} size='1x' />
+        </button>
+
 
           <button onClick={closeGame} className='absolute z-20 sm:flex md:hidden lg:hidden top-5 right-10 bg-blue-700 text-white px-4 py-2 mt-2 rounded'>
                 <FontAwesomeIcon icon={faX} size="1x"/>

@@ -67,7 +67,7 @@ function Header({isGameInProgress, setShowAlert, showAlert}) {
 
       return (
         <header style={headerStyles}>
-          <div className="flex bg-gray-800 p-2 rounded-md">
+          <div className="flex bg-gray-800 p-2 rounded-lg border-gray-700 border-b-[4px]">
             
           {showAlert && <Alert color={'blue'} text={'No puedes volver al inicio, debes cerrar o acabar la partida'} />}
 

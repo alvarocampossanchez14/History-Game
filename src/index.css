@@ -32,6 +32,8 @@ button {
   }
 }
 
+
+
 .marquee {
   display: flex;
   overflow: hidden;

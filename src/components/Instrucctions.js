@@ -1,5 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import { useNavigate }  from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight} from '@fortawesome/free-solid-svg-icons';
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import app from "./../firebase";
 import Alert from './Alert';
@@ -65,17 +67,25 @@ function Instrucctions({ usuarioLogueado}) {
             <div>
             <button
             onClick={() => navigate(`/${generateUUID()}`)}// Ir a la página de juego
-              className="bg-blue-500 hover:bg-blue-600 text-white text-lg font-semibold px-6 py-2 rounded-md"
+              className="cursor-pointer transition-all bg-blue-500 text-white px-6 py-2 rounded-lg
+              border-blue-600
+              border-b-[4px] hover:brightness-110 hover:-translate-y-[1px] hover:border-b-[6px]
+              active:border-b-[2px] active:brightness-90 active:translate-y-[2px]"
             >
               Jugar
+              <FontAwesomeIcon icon={faArrowRight} size='1x' className='ml-2'/>
             </button>
             </div>
           ) : (
             <button
               onClick={iniciarSesionConGoogle}
-              className="bg-blue-500 hover:bg-blue-600 text-white text-lg font-semibold px-6 py-2 rounded-md"
+              className="cursor-pointer transition-all bg-blue-500 text-white px-6 py-2 rounded-lg
+              border-blue-600
+              border-b-[4px] hover:brightness-110 hover:-translate-y-[1px] hover:border-b-[6px]
+              active:border-b-[2px] active:brightness-90 active:translate-y-[2px]"
             >
               Iniciar sessió per jugar
+              <FontAwesomeIcon icon={faArrowRight} size='1x' className='ml-2'/>
             </button>
           )}
         </div>
